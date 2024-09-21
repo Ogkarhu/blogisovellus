@@ -1,0 +1,10 @@
+<h1>blogitemplate</h1>
+<hr>
+<a href="/new_post">new post</a>
+<hr>
+<h2>tarkkaan kuratoitu sisältö</h2>
+    {%for post in posts %}
+        {{post.breadtext }}
+        <br>
+        
+    {%endfor%}
