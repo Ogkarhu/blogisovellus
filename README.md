@@ -24,7 +24,7 @@ Käyttäjä voi kirjautua joko käyttäjätunnuksella tai sähköpostiosoitteell
     ```python3 -m venv venv```
 
 5. Avaa virtuaaliympäristö
-    ```source venv/bin/activate
+    ```source venv/bin/activate```
 
 
 6. Käynnistä paikallinen sovellus
