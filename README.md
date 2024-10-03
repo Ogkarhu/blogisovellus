@@ -33,12 +33,17 @@ Käyttäjä voi kirjautua joko käyttäjätunnuksella tai sähköpostiosoitteell
 7. Avaa tietokanta uuteen terminaali-ikkunaan 
     ```start-pg.sh```
 
-8. Voit avata sivuston selaimessa
+8. Luo tietokanta ajamalla uudessa terminaali-ikkunassa schema.sql
+    ```psql < schema.sql```
+
+9. Voit avata sivuston selaimessa
     http://localhost:5000/
 
 # sivuston käyttö
 1. Tällä hetkellä sivusto aukeaa "blog template"-etusivulle
-2. Sivustolla on otsikon lisäksi mahdollisuus lisätä uusi tekstipostaus "new post"-napista
-3. nämä tekstipostaukset ovat nähtävillä etusivulla
+2. Sivustolla on otsikon lisäksi mahdollisuus lisätä uusi videoupotus 
+joko youtube-videon osoitekentästä, tai jakolinkistä "new post"-napista
+3. nämä postaukset ovat nähtävillä etusivulla
+
 
 
