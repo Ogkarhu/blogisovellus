@@ -31,7 +31,7 @@ Käyttäjä voi kirjautua joko käyttäjätunnuksella tai sähköpostiosoitteell
     ```flask run```
 
 7. Avaa tietokanta uuteen terminaali-ikkunaan 
-    ```startpg.sh```
+    ```start-pg.sh```
 
 8. Voit avata sivuston selaimessa
     http://localhost:5000/
