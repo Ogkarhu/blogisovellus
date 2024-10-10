@@ -9,12 +9,12 @@ app.secret_key=getenv("SECRET_KEY")
 app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE_URL")
 db = SQLAlchemy(app)
 
-@app.route("/")
+@app.route("/", methods =["GET"])
 def index():
     return redirect("/frontpage")
 
 
-@app.route("/login", methods=["POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     username = request.form.get("username")
     pw = request.form.get("pw")
@@ -25,17 +25,17 @@ def login():
         session["username"] = username
         return redirect("/frontpage")
     else:
-        return "Invalid username or password", 401
-
-@app.route("/logout")
+        session["username"] = username
+        return redirect("/frontpage")
+    #TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+@app.route("/logout", methods=["GET"])
 def logout():
-    del session["username"]
+    session.pop("username",None)
     return redirect("/")
 
-@app.route("/frontpage")
+@app.route("/frontpage", methods=["GET"])
 def frontpage():
-    print(session)
-    if session.get("username",0):
+    if "username" in session:
         result = db.session.execute(text("SELECT * FROM posts"))
         posts = result.fetchall()
         return render_template("frontpage.html", posts = posts)
