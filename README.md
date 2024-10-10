@@ -28,7 +28,7 @@ Käyttäjä voi kirjautua joko käyttäjätunnuksella tai sähköpostiosoitteell
 
 
 6. Käynnistä paikallinen sovellus
-    ```flask run```
+    ```flask run --debug```
 
 7. Avaa tietokanta uuteen terminaali-ikkunaan 
     ```start-pg.sh```

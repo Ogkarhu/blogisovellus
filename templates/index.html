@@ -1,24 +1,18 @@
-<h1>Blog Template</h1>
-<hr>
-<a href="/new_post">New Post</a>
-<hr>
 
-<h2>Tarkkaan Kuratoitu Sisältö</h2>
+{% if session.username %}
+<p>Olet kirjautunut nimellä {{ session.username }}</p>
+<a href="/logout">Kirjaudu ulos</a>
+{% else %}
+<form action="/login" method="POST">
+<p>Tunnus:<br>
+<input type="text" name="username"></p>
+<p>Salasana:<br>
+<input type="password" name="password"></p>
+<input type="submit" value="Kirjaudu">
+<br>
+<a href="/new_user">New User</a>
+</form>
+{% endif %}
 
-{% for post in posts %}
-    <!-- Display date -->
-    {{ post.created_at.strftime('%Y-%m-%d %H:%M:%S') }} -
 
-    <!-- Embed video -->
-    {% if post.youtube_url %}
-        <iframe width="560" height="315"
-                src="{{ post.youtube_url }}"
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
-    {% endif %}
 
-    <!-- Display comment -->
-    <p>{{ post.breadtext }}</p>
-    
-    <br>
-{% endfor %}
